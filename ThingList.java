@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ThingList {
+public class ThingList{
 
     private class Node {
         public Thing data;
@@ -10,14 +10,15 @@ public class ThingList {
     public Node head;
 
     public ThingList() {
-        head.data = null;
-        head.next.data = null;
+        head = new Node();
+        head.next = new Node();
+        head.data = new TypeA();
     }
 
     public Thing getData() {
         return head.data;
     }
-    
+
     public void addThing(Thing a) {
         if (head == null) {
             head.data = a;
@@ -29,7 +30,7 @@ public class ThingList {
                 it = it.next;
             }
             //i think? this doesnt make any sense to me rn 
-            it.next.data = a;
+            it.data = a;
         }
     }
 
