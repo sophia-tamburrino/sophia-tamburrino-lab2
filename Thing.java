@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Thing {
+abstract class Thing {
     // dir: 0=North, 1=East, 2=South, 3=West.
     // timeSinceLast: this is only important for "TypeB" Things.
     public Random rand = new Random(System.currentTimeMillis());
@@ -39,35 +39,36 @@ public class Thing {
         t.col += dc[t.dir];
     }
 
-    public void maybeTurn(Random num) {
-        int i = num.nextInt(3);
+    public abstract void maybeTurn(Random num);
+    //{
+    //     int i = num.nextInt(3);
 
-        if (t.isTypeB) {
-            t.timeSinceLast++;
+    //     if (t.isTypeB) {
+    //         t.timeSinceLast++;
 
-            if (t.timeSinceLast == 10) {
-            t.timeSinceLast = 0;
+    //         if (t.timeSinceLast == 10) {
+    //         t.timeSinceLast = 0;
 
-            if (i == 1) {
-                rightTurn();
-            }
+    //         if (i == 1) {
+    //             rightTurn();
+    //         }
 
-            if (i == 2) {
-                leftTurn();
-            }
-            }
-        } else   {
-            if (i == 1) {
-            rightTurn();
-            }
+    //         if (i == 2) {
+    //             leftTurn();
+    //         }
+    //         }
+    //     } else   {
+    //         if (i == 1) {
+    //         rightTurn();
+    //         }
 
-            if (i == 2) {
-            leftTurn();
-            }
-        }
-    }
+    //         if (i == 2) {
+    //         leftTurn();
+    //         }
+    //     }
+    // }
     
-    public String toString() {
-        return row + " " + col + " " + lab;
-    }
+    // public String toString() {
+    //     return row + " " + col + " " + lab;
+    // }
   }

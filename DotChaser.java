@@ -28,7 +28,7 @@ public class DotChaser {
 
         // Add a typeA thing to the list.
         // (GEE, THAT'S A LOT OF CODE FOR JUST CREATING ONE THING)
-        Thing tA = new Thing();
+        TypeA tA = new TypeA();
         tA.row = 45;
         tA.col = 50;
         
@@ -38,7 +38,7 @@ public class DotChaser {
         L = nA;
 
         // Add a typeB thing to the list
-        Thing tB = new Thing();
+        TypeB tB = new TypeB();
         tB.row     = 55;
         tB.col     = 50;
         tB.lab     = 'b';
