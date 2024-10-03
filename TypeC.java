@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class TypeC extends Thing {
-
     
       //modified based on type
       @Override

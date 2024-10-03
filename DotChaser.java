@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class DotChaser {
-  public static Random rand = new Random(System.currentTimeMillis());
-
   /**
    * A "Thing" moves in a grid world. A TypeA Thing randomly
    * decides to turn left or right (or not turn) every "round",
@@ -11,20 +9,6 @@ public class DotChaser {
    *
    * A STATIC CLASS? OH NO! GET IT OUT OF HERE!
    */
-
-  /**
-   * YOU'LL NEED TO PUT THIS SOMEWHERE ELSE
-   * HINT: WOULDN'T IT BE NICE TO HAVE A LIST OR QUEUE SO THAT
-   *       WE DON'T HAVE TO USE NODES HERE?
-   * This class is for linked lists of Thing's
-   */
-
-
-
-  // EEEEEK! STATIC METHODS!!! PLEASE FIND THEM A BETTER HOME.
-  //removed static on the following classes
-
-
   /**
    * This static method is ok :)
    */
