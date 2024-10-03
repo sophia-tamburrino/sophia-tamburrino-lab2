@@ -28,26 +28,14 @@ public class DotChaser {
 
         // Add a typeA thing to the list.
         // (GEE, THAT'S A LOT OF CODE FOR JUST CREATING ONE THING)
-        TypeA tA = new TypeA();
-        tA.row = 45;
-        tA.col = 50;
-        
-        ThingList nA = new ThingList();
-        nA.addThing(tA);
-        nA.addThing(L.getData());
-        L = nA;
+        TypeA tA = new TypeA(45, 50, 'r');
+        L.addThing(tA);
 
-        // Add a typeB thing to the list
-        TypeB tB = new TypeB();
-        tB.row     = 55;
-        tB.col     = 50;
-        tB.lab     = 'b';
-        tB.isTypeB = true;
+        TypeB tB = new TypeB(55, 50, 'b');
+        L.addThing(tB);
 
-        ThingList nB = new ThingList();
-        nB.addThing(tB);
-        nB.addThing(L.getData());
-        L = nB;
+        TypeC tC = new TypeC(55, 50, 'o');
+        L.addThing(tC);
       }
 
       // Print out each thing.
@@ -60,6 +48,8 @@ public class DotChaser {
 
       // Move each thing.
       // (SEEMS LIKE A NICE MOVEALL() METHOD CALL WOULD WORK HERE)
+      Random rand = new Random(System.currentTimeMillis());
+      L.moveAll(rand);
       
       count++;
     }

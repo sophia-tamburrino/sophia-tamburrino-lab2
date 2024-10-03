@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ThingList{
+public class ThingList {
 
     private class Node {
         public Thing data;
@@ -10,17 +10,12 @@ public class ThingList{
     public Node head;
 
     public ThingList() {
-        head = new Node();
-        head.next = new Node();
-        head.data = new TypeA();
-    }
-
-    public Thing getData() {
-        return head.data;
+        head = null;
     }
 
     public void addThing(Thing a) {
         if (head == null) {
+            head = new Node();
             head.data = a;
             head.next = null;
         }
@@ -29,8 +24,9 @@ public class ThingList{
             while(it.next != null) {
                 it = it.next;
             }
-            //i think? this doesnt make any sense to me rn 
-            it.data = a;
+            Node newNode = new Node();
+            newNode.data = a;
+            it.next = newNode;
         }
     }
 
@@ -47,6 +43,7 @@ public class ThingList{
         while(it != null) {
             it.data.maybeTurn(rand);
             it.data.step();
+            it = it.next;
         }
     }
 }

@@ -12,14 +12,18 @@ abstract class Thing {
     protected char lab = 'r';
     public boolean isTypeB;
     
-    Thing t;
+    public Thing (int r, int c, char l) {
+        row = r;
+        col = c;
+        lab = l;
+    }
 
     public void rightTurn() {
-        t.dir = (t.dir + 1) % 4;
+        this.dir = (this.dir + 1) % 4;
       }
     
     public void leftTurn() {
-        t.dir = (t.dir + 3) % 4;
+        this.dir = (this.dir + 3) % 4;
     }
     
     public void step() {
@@ -28,8 +32,8 @@ abstract class Thing {
         }, dr = {
             1, 0, -1, 0
         };
-        t.row += dr[t.dir];
-        t.col += dc[t.dir];
+        this.row += dr[this.dir];
+        this.col += dc[this.dir];
     }
 
     public abstract void maybeTurn(Random num);
