@@ -34,7 +34,7 @@ public class DotChaser {
         
         ThingList nA = new ThingList();
         nA.addThing(tA);
-        nA.addThing(L.head.data);
+        nA.addThing(L.getData());
         L = nA;
 
         // Add a typeB thing to the list
@@ -46,7 +46,7 @@ public class DotChaser {
 
         ThingList nB = new ThingList();
         nB.addThing(tB);
-        nB.addThing(L.head.data);
+        nB.addThing(L.getData());
         L = nB;
       }
 

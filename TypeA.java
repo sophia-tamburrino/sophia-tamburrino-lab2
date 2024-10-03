@@ -7,32 +7,32 @@ public class TypeA extends Thing {
   //which randomly choses left, right or straight at every round;
 
   @Override
-  public void maybeTurn(Thing t) {
-    int i = rand.nextInt(3);
+  public void maybeTurn(Random num) {
+    int i = num.nextInt(3);
 
     if (t.isTypeB) {
-      t.timeSinceLast++;
+        t.timeSinceLast++;
 
-      if (t.timeSinceLast == 10) {
+        if (t.timeSinceLast == 10) {
         t.timeSinceLast = 0;
 
         if (i == 1) {
-          rightTurn(t);
+            rightTurn();
         }
 
         if (i == 2) {
-          leftTurn(t);
+            leftTurn();
         }
-      }
+        }
     } else   {
-      if (i == 1) {
-        rightTurn(t);
-      }
+        if (i == 1) {
+        rightTurn();
+        }
 
-      if (i == 2) {
-        leftTurn(t);
-      }
+        if (i == 2) {
+        leftTurn();
+        }
     }
-  }
+}
 
 }

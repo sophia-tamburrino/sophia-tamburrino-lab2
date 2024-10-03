@@ -6,8 +6,8 @@ public class TypeB extends Thing {
     //which randomly chooses left, right or straight every 10th round
 
     @Override
-    public void maybeTurn(Thing t) {
-        int i = rand.nextInt(3);
+    public void maybeTurn(Random num) {
+        int i = num.nextInt(3);
 
         if (t.isTypeB) {
             t.timeSinceLast++;
@@ -16,20 +16,20 @@ public class TypeB extends Thing {
             t.timeSinceLast = 0;
 
             if (i == 1) {
-                rightTurn(t);
+                rightTurn();
             }
 
             if (i == 2) {
-                leftTurn(t);
+                leftTurn();
             }
             }
         } else   {
             if (i == 1) {
-            rightTurn(t);
+            rightTurn();
             }
 
             if (i == 2) {
-            leftTurn(t);
+            leftTurn();
             }
         }
     }

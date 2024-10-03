@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class ThingList extends Thing {
+public class ThingList {
 
-    public class Node {
+    private class Node {
         public Thing data;
         public Node next;
     }
@@ -14,6 +14,10 @@ public class ThingList extends Thing {
         head.next.data = null;
     }
 
+    public Thing getData() {
+        return head.data;
+    }
+    
     public void addThing(Thing a) {
         if (head == null) {
             head.data = a;
@@ -36,11 +40,12 @@ public class ThingList extends Thing {
             it = it.next;
         }
     }
-    public void moveAll() {
+    
+    public void moveAll(Random rand) {
         Node it = head;
         while(it != null) {
-            maybeTurn(it.data);
-            step(it.data);
+            it.data.maybeTurn(rand);
+            it.data.step();
         }
     }
 }
