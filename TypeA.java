@@ -1,10 +1,11 @@
 import java.util.*;
 
 
-public class TypeA extends Thing{
+public class TypeA extends Thing {
 
   //modified based on type
-  
+  //which randomly choses left, right or straight at every round;
+
   @Override
   public void maybeTurn(Thing t) {
     int i = rand.nextInt(3);

@@ -19,7 +19,7 @@ public class DotChaser {
       N = Integer.parseInt(args[0]);
 
     // INSTEAD OF A NODE, CREATE SOMETHING MORE USER-FRIENDLY.
-    Node L = null;
+    ThingList L = new ThingList();
     int count = 0;
 
     while( true ) {
@@ -31,10 +31,11 @@ public class DotChaser {
         Thing tA = new Thing();
         tA.row = 45;
         tA.col = 50;
-        Node nA = new Node();
-        nA.data = tA;
-        nA.next = L;
-        L       = nA;
+        
+        ThingList nA = new ThingList();
+        nA.addThing(tA);
+        nA.addThing(L.head.data);
+        L = nA;
 
         // Add a typeB thing to the list
         Thing tB = new Thing();
@@ -42,27 +43,24 @@ public class DotChaser {
         tB.col     = 50;
         tB.lab     = 'b';
         tB.isTypeB = true;
-        Node nB = new Node();
-        nB.data = tB;
-        nB.next = L;
-        L       = nB;
+
+        ThingList nB = new ThingList();
+        nB.addThing(tB);
+        nB.addThing(L.head.data);
+        L = nB;
       }
 
       // Print out each thing.
       // (SEEMS LIKE A NICE PRINTALL() METHOD CALL WOULD WORK HERE)
       // (SEEMS LIKE A toString() METHOD IN THE CLASS WOULD ALSO BE NICE)
-      for( Node T = L; T != null; T = T.next )
-        System.out.println(T.data.row + " " + T.data.col + " " + T.data.lab);
+      L.printAll();
 
       System.out.println("done");
       System.out.flush();
 
       // Move each thing.
       // (SEEMS LIKE A NICE MOVEALL() METHOD CALL WOULD WORK HERE)
-      for( Node T = L; T != null; T = T.next ) {
-        maybeTurn(T.data);
-        step(T.data);
-      }
+      
       count++;
     }
   }

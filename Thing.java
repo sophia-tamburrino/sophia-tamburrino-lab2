@@ -14,45 +14,47 @@ public class Thing {
       }
     
     public void leftTurn(Thing t) {
-    t.dir = (t.dir + 3) % 4;
+        t.dir = (t.dir + 3) % 4;
     }
     
     public void step(Thing t) {
-    final int[] dc = {
-        0, 1, 0, -1
-    }, dr = {
-        1, 0, -1, 0
-    };
-    t.row += dr[t.dir];
-    t.col += dc[t.dir];
+        final int[] dc = {
+            0, 1, 0, -1
+        }, dr = {
+            1, 0, -1, 0
+        };
+        t.row += dr[t.dir];
+        t.col += dc[t.dir];
     }
 
     public void maybeTurn(Thing t) {
-    int i = rand.nextInt(3);
+        int i = rand.nextInt(3);
 
-    if (t.isTypeB) {
-        t.timeSinceLast++;
+        if (t.isTypeB) {
+            t.timeSinceLast++;
 
-        if (t.timeSinceLast == 10) {
-        t.timeSinceLast = 0;
+            if (t.timeSinceLast == 10) {
+            t.timeSinceLast = 0;
 
-        if (i == 1) {
+            if (i == 1) {
+                rightTurn(t);
+            }
+
+            if (i == 2) {
+                leftTurn(t);
+            }
+            }
+        } else   {
+            if (i == 1) {
             rightTurn(t);
-        }
+            }
 
-        if (i == 2) {
+            if (i == 2) {
             leftTurn(t);
-        }
-        }
-    } else   {
-        if (i == 1) {
-        rightTurn(t);
-        }
-
-        if (i == 2) {
-        leftTurn(t);
+            }
         }
     }
+    public String toString() {
+        return row + " " + col + " " + lab;
     }
-
   }
