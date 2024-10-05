@@ -34,7 +34,7 @@ public class DotChaser {
         TypeB tB = new TypeB(55, 50, 'b');
         L.addThing(tB);
 
-        TypeC tC = new TypeC(55, 50, 'o');
+        TypeC tC = new TypeC(55, 50, 'y');
         L.addThing(tC);
       }
 

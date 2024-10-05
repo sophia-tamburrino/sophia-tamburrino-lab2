@@ -15,9 +15,13 @@ public class TypeC extends Thing {
         if (i == 1) {
             rightTurn();
             step();
+            leftTurn();
+            step();
         }
         if (i == 2) {
             leftTurn();
+            step();
+            rightTurn();
             step();
         }
     }
